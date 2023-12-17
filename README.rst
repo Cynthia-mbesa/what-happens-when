@@ -709,3 +709,33 @@ page rendering and painting.
 .. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
 .. _`Spanish`: https://github.com/gonzaleztroyano/what-happens-when-ES
+
+Error Handling and Exceptions:
+TLS Handshake:
+During the TLS handshake, it's essential to consider potential errors and exceptions. Common scenarios include:
+
+Certificate Validation Failures:
+
+If the server's certificate cannot be verified or does not match the expected certificate, the TLS handshake may terminate. This ensures that secure communication relies on valid and trusted certificates.
+Cipher Suite Mismatch:
+
+Incompatible cipher suites between the client and server can lead to handshake failure. Robust error messages should guide users or developers in resolving such mismatches.
+Insufficient Key Exchange Security:
+
+Weaknesses in the key exchange mechanism can pose security risks. Handling scenarios where secure key exchange is not possible is crucial to maintaining a secure connection.
+
+HTTP Protocol:
+In the HTTP protocol, various error scenarios and exceptions should be addressed:
+
+HTTP Status Codes:
+
+Different HTTP status codes indicate the success or failure of a request. Robust error handling involves interpreting these codes correctly and taking appropriate actions.
+
+Connection Failures:
+
+Network-related issues or server unavailability can result in connection failures. Implementing graceful handling mechanisms, such as retries, can enhance the robustness of applications.
+Timeouts and Retransmissions:
+
+Incorporate strategies for handling timeouts during HTTP requests. Consider retransmission mechanisms for scenarios where a request times out but can be retried without compromising data integrity.
+
+By addressing these error-handling considerations, we can ensure that the system responds effectively to exceptional scenarios, providing a more resilient and user-friendly experience.
